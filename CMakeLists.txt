@@ -72,13 +72,5 @@ else()
 	add_compile_definitions("GLM_FORCE_SWIZZLE")
 endif()
 
-
-target_link_libraries(utils glm::glm glfw OpenGL::GL)
-target_include_directories(utils PUBLIC
-	${CMAKE_CURRENT_SOURCE_DIR}/glad/include
-	${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-
 # Add subdirectories here
 add_subdirectory(01_triangle)
