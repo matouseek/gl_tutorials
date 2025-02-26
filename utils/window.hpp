@@ -28,7 +28,7 @@ public:
 		int height = 600,
 		const std::string& title = "OpenGL Example",
 		int majorVersion = 4,
-		int minorVersion = 4)
+		int minorVersion = 1)
 	{
 		initGLFWWindow(width, height, title, majorVersion, minorVersion);
 		makeCurrent();
