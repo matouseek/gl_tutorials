@@ -207,4 +207,3 @@ inline std::string loadShaderSource(const fs::path& filePath) {
 
 	return fileContent;
 }
-
