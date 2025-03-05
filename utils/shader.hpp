@@ -51,9 +51,6 @@ inline std::string getGLTypeName(GLenum type) {
 	case GL_SAMPLER_3D: return "sampler3D";
 	case GL_SAMPLER_CUBE: return "samplerCube";
 	case GL_SAMPLER_2D_SHADOW: return "sampler2DShadow";
-	case GL_IMAGE_1D: return "image1D";
-	case GL_IMAGE_2D: return "image2D";
-	case GL_IMAGE_3D: return "image3D";
 	// Add more types as needed
 	default: return "Unknown Type " + std::to_string(type);
 	}
@@ -135,6 +132,7 @@ inline auto createShaderProgram(const CompiledShaderStages &aShaderStages) {
 	}
 	GL_CHECK(glValidateProgram(program.get()));
 
+#ifdef GL_COMPUTE_SHADER
 	GLint isValid = 0;
 	GL_CHECK(glGetProgramiv(program.get(), GL_VALIDATE_STATUS, &isValid));
 	if (isValid == GL_FALSE) {
@@ -146,6 +144,8 @@ inline auto createShaderProgram(const CompiledShaderStages &aShaderStages) {
 
 		throw OpenGLError("Shader program validation failed:" + std::string(infoLog.begin(), infoLog.end()));
 	}
+#endif
+
 	return program;
 }
 
@@ -160,11 +160,13 @@ inline auto createShaderProgram(const std::string& vertexShader, const std::stri
 	return createShaderProgram(vs, fs);
 }
 
+#ifdef GL_COMPUTE_SHADER
 inline auto createComputeShaderProgram(const std::string& computeShader) {
 	auto cs = compileShader(GL_COMPUTE_SHADER, computeShader);
 
 	return createShaderProgram(CompiledShaderStages{ &cs });
 }
+#endif
 
 inline std::vector<UniformInfo> listShaderUniforms(const OpenGLResource &aShaderProgram) {
 	std::vector<UniformInfo> uniforms;

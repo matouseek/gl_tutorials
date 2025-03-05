@@ -44,8 +44,6 @@ inline std::string getGLErrorString(GLenum errorCode)
 		{GL_INVALID_ENUM,                   "INVALID_ENUM"},
 		{GL_INVALID_VALUE,                  "INVALID_VALUE"},
 		{GL_INVALID_OPERATION,              "INVALID_OPERATION"},
-		{GL_STACK_OVERFLOW,                 "STACK_OVERFLOW"},
-		{GL_STACK_UNDERFLOW,                "STACK_UNDERFLOW"},
 		{GL_OUT_OF_MEMORY,                  "OUT_OF_MEMORY"},
 		{GL_INVALID_FRAMEBUFFER_OPERATION,  "INVALID_FRAMEBUFFER_OPERATION"},
 	};
