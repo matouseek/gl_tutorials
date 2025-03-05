@@ -49,7 +49,7 @@ enum class RenderStyle {
 class MaterialParameters {
 public:
 	MaterialParameters()
-       		: mRenderStyle(RenderStyle::Solid)
+		: mRenderStyle(RenderStyle::Solid)
 		, mIsTesselation(false)
 	{}
 	MaterialParameters(const std::string &aMaterialName, RenderStyle aRenderStyle, const MaterialParameterValues &aParameterValues, bool aIsTesselation = false)

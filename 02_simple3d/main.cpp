@@ -55,7 +55,7 @@ int main() {
 		OGLGeometryFactory geometryFactory;
 
 
-		std::array<SimpleScene, 2> scenes {
+		std::array<SimpleScene, 1> scenes {
 			createCubeScene(materialFactory, geometryFactory),
 		};
 		int currentSceneIdx = 0;
@@ -83,6 +83,3 @@ int main() {
 	glfwTerminate();
 	return 0;
 }
-
-
-
