@@ -1,8 +1,8 @@
-#version 430 core
+#version 410 core
 
-layout(location = 2) uniform mat4 u_modelMat;
-layout(location = 30) uniform mat4 u_viewMat;
-layout(location = 60) uniform mat4 u_projMat;
+uniform mat4 u_modelMat;
+uniform mat4 u_viewMat;
+uniform mat4 u_projMat;
 
 in vec3 in_vert;
 

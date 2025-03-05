@@ -163,7 +163,6 @@ const static std::map<std::string, GLenum> cShaderTypeEnums = {
 	{ "geometry", GL_GEOMETRY_SHADER },
 	{ "control", GL_TESS_CONTROL_SHADER },
 	{ "evaluation", GL_TESS_EVALUATION_SHADER },
-	{ "compute", GL_COMPUTE_SHADER },
 };
 
 void OGLMaterialFactory::loadShadersFromDir(fs::path aShaderDir) {

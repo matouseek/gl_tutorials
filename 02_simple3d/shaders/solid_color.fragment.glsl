@@ -1,4 +1,4 @@
-#version 430 core
+#version 410 core
 
 uniform vec4 u_solidColor = vec4(0.0, 0.0, 1.0, 1.0);
 
