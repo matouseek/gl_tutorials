@@ -1,4 +1,4 @@
-#version 430 core
+#version 410 core
 
 uniform sampler2D u_textureSampler1;
 uniform sampler2D u_textureSampler2;
